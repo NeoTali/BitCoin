@@ -1,5 +1,5 @@
 # BitCoin
-_This is an app test for Bitphy
+_This is an app test for Bitphy_
 
 # How to install
 Make a folder to contain the files. For example: Documents/Bitcoin
