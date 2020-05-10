@@ -1,0 +1,6 @@
+<div class="border">
+    <div class="left-align">
+        <p>{{currency}}</p>
+    </div>
+    <p class="center-align">{{currency === 'USD' && dataService.ExchangePrice[currency] ? '$' : ''}}{{dataService.ExchangePrice[currency] ? dataService.ExchangePrice[currency] + (currency != 'USD' ? sign : '') : 'Not Avalaible'}}</p>
+</div>
