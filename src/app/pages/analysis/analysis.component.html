@@ -1,0 +1,27 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <div class="containerX">
+        <div>
+            <input matInput id="dp1" [matDatepicker]="picker1" [value]="startDate" placeholder="Start date" (dateChange)="changeEvent($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 [startAt]="startDate"></mat-datepicker>
+
+            <input matInput [matDatepicker]="picker2" [value]="endDate" placeholder="End date" (dateChange)="changeEvent($event)">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 [startAt]="endDate"></mat-datepicker>
+
+            <span class="mat-button-wrapper" (click)="update()">
+                <mat-icon _ngcontent-lad-c141="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">
+                    cached
+                </mat-icon>
+            </span>
+        </div>
+        <mat-error *ngIf="errors.errEndGTStart">Start date shouldn't be greater than End date</mat-error>
+        <mat-error *ngIf="errors.errRng0">Unfortunately the minimun range allowed is 1 day.</mat-error>
+        <mat-error *ngIf="errors.errRngMax">Unfortunately, the maximum range allowed is 365 days.</mat-error>
+    </div>
+    <div class="containerX">
+        <div fxflex="100%" fxflex.gt-sm="25" fxflexorder="3" style="flex-direction: row; order: 3; flex: 1 1 50%; box-sizing: border-box; display: flex;">
+            <app-show-graph [title]="title" [data]="dataService.HistoricPrice" [type]="'LineChart'" [columns]="columns"></app-show-graph>
+        </div>
+    </div>
+</section>

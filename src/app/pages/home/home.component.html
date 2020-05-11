@@ -1,0 +1,27 @@
+<div class="container" fxLayout="column" fxLayoutAlign="left left">
+    <p>Current exchange price</p>
+    <div class="container" fxLayout="row" fxLayout.lt-md="column">
+        <div class="container" fxLayout="row" fxLayout.lt-sm="column">
+            <div fxflex>
+                <app-show-currency [currency] = "'USD'"></app-show-currency>
+            </div>
+            <div fxflex>
+                <app-show-currency [currency] = "'EUR'"></app-show-currency>
+            </div>
+        </div>
+        <div class="container" fxLayout="row" fxLayout.lt-sm="column">
+            <div fxflex>
+                <app-show-currency [currency] = "'GBP'"></app-show-currency>
+            </div>
+            <div fxflex>
+                <app-show-currency [currency] = "'CNY'"></app-show-currency>
+            </div>
+        </div>
+    </div>
+    <div class="container" fxLayout="row">
+        <div fxflex>
+            <app-show-graph [title]="title" [data]="dataService.HistoricData" [type]="'LineChart'" [columns]="columns"></app-show-graph>
+        </div>
+    </div>
+</div>
+
